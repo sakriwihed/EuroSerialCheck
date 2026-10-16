@@ -49,7 +49,7 @@ bool checkEuroSerialNumber2002(string& serialNumber){
     int CodeChar = asciicode-64;// asciicode von character A ist 65 aber wir brauchen den Code 1 fur A usw
     int QsummeChar=(CodeChar%10)+(CodeChar/10);
     int Qsumme1=0;
-    for (int i = 1; i < 12; i++) {
+    for (int i = 1; i < 11; i++) { // ohne die Pruefziffer (Index 11)
         Qsumme1 =Qsumme1+serialNumber[i]-48; //weil asccicode von character 0 ist 48 , damit wir die reelle wert vom char rechnen
     }
 
@@ -83,7 +83,7 @@ bool checkEuroSerialNumber2013(string& serialNumber)
     }
     int QsummeChar=(CodeChar%10)+(CodeChar/10);
     int Qsumme1=0;
-    for (int i = 2; i < 12; i++) {
+    for (int i = 2; i < 11; i++) { // ohne die Pruefziffer (Index 11)
         Qsumme1 =Qsumme1+serialNumber[i]-48; //weil asccicode von character 0 ist 48 , damit wir die reelle wert von dem character im string rechnen
     }
 
@@ -95,7 +95,6 @@ bool checkEuroSerialNumber2013(string& serialNumber)
     }if (Pruefziffer==-1){
         Pruefziffer=8;
     }
-    cout << Pruefziffer << endl;
     if (Pruefziffer==serialNumber[11]-48) { //48 ist der asciicode von character 0,damit man die reelle Werte vergleichen wird
         return true;
     }
