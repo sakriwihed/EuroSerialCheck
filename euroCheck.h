@@ -1,7 +1,6 @@
 #ifndef BLATT2_EUROCHECK_H
 #define BLATT2_EUROCHECK_H
 #include <string>
-#include "euroCheck.cpp"
 using namespace std;
 
 // TODO Aufgabe 2:
